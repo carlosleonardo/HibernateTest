@@ -15,22 +15,22 @@ public class AlunoDTO {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 50)
     private String nome;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 100)
     private String email;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 30)
     private String telefone;
 
-    @Column
+    @Column(length = 250)
     private String endereco;
 
     @Column
     private double notaFinal;
 
-    @Column
+    @Column(length = 2)
     private String status;
 
     @Column
@@ -42,7 +42,7 @@ public class AlunoDTO {
     @Column
     private Date dataConclusao;
 
-    @Column
+    @Column(length = 500)
     private String observacoes;
 
 }

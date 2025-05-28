@@ -16,7 +16,7 @@ public class HibernateTest {
                     "981234567",
                     "Rua Exemplo, 123",
                     8,
-                    "Aprovado",
+                    "AP",
                     new Date(),
                     new Date(),
                     null,
