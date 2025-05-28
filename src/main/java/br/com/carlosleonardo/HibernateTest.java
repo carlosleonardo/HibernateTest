@@ -25,7 +25,7 @@ public class HibernateTest {
             session.getTransaction().commit();
             System.out.println("Aluno salvo com sucesso: " + aluno);
         } catch (Exception e) {
-            System.out.printf("Erro ao salvar o aluno: %s%n", e.getMessage());
+            System.err.printf("Erro ao salvar o aluno: %s%n", e.getMessage());
             if (sessionFactory.getCurrentSession().getTransaction().isActive()) {
                 sessionFactory.getCurrentSession().getTransaction().rollback();
             }
