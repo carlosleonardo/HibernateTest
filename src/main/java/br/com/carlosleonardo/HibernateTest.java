@@ -10,7 +10,7 @@ public class HibernateTest {
             session.beginTransaction();
             // Aqui você pode realizar operações com o Hibernate, como salvar, atualizar ou consultar entidades
             // Exemplo: session.save(new Cidade("Nova Cidade", 100000, null));
-            var aluno = new AlunoDTO(1,
+            var aluno = new AlunoDTO(null,
                     "Carlos",
                     "carlos.leonardo.goes@gmail.com",
                     "981234567",
@@ -25,6 +25,7 @@ public class HibernateTest {
             session.getTransaction().commit();
             System.out.println("Aluno salvo com sucesso: " + aluno);
         } catch (Exception e) {
+            System.out.printf("Erro ao salvar o aluno: %s%n", e.getMessage());
             if (sessionFactory.getCurrentSession().getTransaction().isActive()) {
                 sessionFactory.getCurrentSession().getTransaction().rollback();
             }

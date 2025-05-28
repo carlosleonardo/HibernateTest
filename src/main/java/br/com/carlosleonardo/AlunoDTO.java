@@ -1,27 +1,48 @@
 package br.com.carlosleonardo;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 
 import java.util.Date;
 
 @Entity
+@Data
+@AllArgsConstructor
 @Table(name = "alunos")
-public record AlunoDTO(
-        @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        int id,
-        @Column(nullable = false) String nome,
-        @Column(nullable = false) String email,
-        @Column(nullable = false) String telefone,
-        @Column String endereco,
-        @Column double notaFinal,
-        @Column String status,
-        @Column Date dataNascimento,
-        @Column(nullable = false) Date dataMatricula,
-        @Column Date dataConclusao,
-        @Column String observacoes
-) {
-    public AlunoDTO() {
-        this(0, "", "", "", "", 0.0, "", new Date(), new Date(), null, "");
-    }
+public class AlunoDTO {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    @Column(nullable = false)
+    private String nome;
+
+    @Column(nullable = false)
+    private String email;
+
+    @Column(nullable = false)
+    private String telefone;
+
+    @Column
+    private String endereco;
+
+    @Column
+    private double notaFinal;
+
+    @Column
+    private String status;
+
+    @Column
+    private Date dataNascimento;
+
+    @Column(nullable = false)
+    private Date dataMatricula;
+
+    @Column
+    private Date dataConclusao;
+
+    @Column
+    private String observacoes;
+
 }
