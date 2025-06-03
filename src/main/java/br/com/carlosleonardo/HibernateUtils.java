@@ -1,9 +1,11 @@
 package br.com.carlosleonardo;
 
+import lombok.Getter;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 public class HibernateUtils {
+    @Getter
     private static final SessionFactory sessionFactory;
 
     static {
@@ -13,10 +15,6 @@ public class HibernateUtils {
             System.err.println("Falha na criação do SessionFactory." + ex);
             throw new ExceptionInInitializerError(ex);
         }
-    }
-
-    public static SessionFactory getSessionFactory() {
-        return sessionFactory;
     }
 
 }
